@@ -1,15 +1,15 @@
 import 'dotenv/config'
 import {
   encodeFunctionData,
-  erc20Abi,
   formatEther,
   formatUnits,
   type Hash,
   parseGwei,
   parseTransaction,
+  parseUnits,
   serializeTransaction,
 } from 'viem'
-import { abi, chainId, client, gas, usdc, value, vault } from './constant'
+import { abi, chainId, client, gas, value, vault } from './constant'
 import { address, connectId, deviceId, passphraseState, path, SDK } from './wallet'
 
 const feePerGas = parseGwei(process.env.FEE_PER_GAS ?? '10')
@@ -18,12 +18,7 @@ console.log(formatEther(feePerGas * gas), 'ETH')
 
 const nonce = await client.getTransactionCount({ address })
 
-const amount = await client.readContract({
-  address: usdc,
-  abi: erc20Abi,
-  functionName: 'balanceOf',
-  args: [address],
-})
+const amount = parseUnits('99999', 6)
 
 console.log(formatUnits(amount, 6), 'USDC')
 
