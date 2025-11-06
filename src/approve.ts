@@ -1,10 +1,4 @@
-import {
-  encodeFunctionData,
-  erc20Abi,
-  type Hash,
-  parseTransaction,
-  serializeTransaction,
-} from 'viem'
+import { encodeFunctionData, erc20Abi, type Hash, serializeTransaction } from 'viem'
 import { chainId, client, gas, usdc, value, vault } from './utils/constant'
 import { amount, path } from './utils/env'
 import { address, connectId, deviceId, passphraseState, SDK } from './utils/wallet'
@@ -57,10 +51,6 @@ const serializedTransaction = serializeTransaction(
     v: BigInt(signedTransaction.payload.v),
   },
 )
-
-console.log(parseTransaction(serializedTransaction))
-
-console.log(serializedTransaction)
 
 const hash = await client.sendRawTransaction({ serializedTransaction })
 

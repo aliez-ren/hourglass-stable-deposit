@@ -7,38 +7,45 @@
 
 ## Prepare
 
-- A OneKey Hardware Wallet
+1. A OneKey hardware wallet. [Get 5% OFF](https://onekey.so/r/TAOLITOOLS)
 
-  [Get 5% OFF](https://onekey.so/r/TAOLITOOLS)
+2. Install [Bun](https://bun.sh/)
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
 
-- Install [Bun](https://bun.sh/)
-  ```bash
-  curl -fsSL https://bun.sh/install | bash
-  ```
+3. Clone repo
+```bash
+git clone https://github.com/aliez-ren/hourglass-stable-deposit.git
+cd hourglass-stable-deposit.git
+```
 
-- Clone Repo
-  ```bash
-  git clone https://github.com/aliez-ren/hourglass-stable-deposit.git
-  cd hourglass-stable-deposit.git
-  ```
-- Install dependencies
-  ```bash
-  bun i
-  ```
+4. Install dependencies
+```bash
+bun i
+```
 
 ## Run
 
-- Approve USDC
-  ```bash
-  bun run approve
-  ```
+1. Approve USDC
+```bash
+bun run approve
+```
 
-- Prepare Deposit Transaction
-  ```bash
-  bun run pre-deposit
-  ```
+2. Prepare deposit transaction, then copy the transaction hex
+```bash
+bun run pre-deposit
+```
 
-- Loop Deposit Transaction
-  ```bash
-  bun run loop-deposit
-  ```
+3. Create a `.env` file (you can copy from `.env.example`)
+  - `DERIVATION_PATH` keep default if you don't understand
+  - `FEE_PER_GAS` unit is Gwei
+  - `AMOUNT` is the USDC amount you want to deposit
+  - `TRANSACTIONS` **paste transaction hex here**. You can set multiple transaction hexes split by `,`
+
+4. Loop deposit transaction. The program will send your transaction hexes to flashbots and other mev builders once per block height.
+```bash
+bun run loop-deposit
+```
+
+5. ⚠️ Do not use your wallet to send any other transactions before deposit success, or the nonce will become invalid.
