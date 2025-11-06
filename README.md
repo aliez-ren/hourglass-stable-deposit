@@ -32,7 +32,7 @@ bun i
 bun run approve
 ```
 
-2. Prepare deposit transaction, then copy the transaction hex.
+2. Prepare deposit transaction, then **copy the transaction hex**.
 ```bash
 bun run pre-deposit
 ```
