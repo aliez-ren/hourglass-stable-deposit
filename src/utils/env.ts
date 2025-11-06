@@ -7,4 +7,4 @@ export const feePerGas = parseGwei(process.env.FEE_PER_GAS ?? '10')
 
 export const amount = parseUnits(process.env.AMOUNT ?? '99999', 6)
 
-export const transaction = process.env.TRANSACTION as Hex
+export const transactions = process.env.TRANSACTIONS?.split(',') as Hex[]
