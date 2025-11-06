@@ -32,20 +32,22 @@ bun i
 bun run approve
 ```
 
-2. Prepare deposit transaction, then copy the transaction hex
+2. Prepare deposit transaction, then copy the transaction hex.
 ```bash
 bun run pre-deposit
 ```
 
-3. Create a `.env` file (you can copy from `.env.example`)
+3. Create a `.env` file. (you can copy from `.env.example`)
   - `DERIVATION_PATH` keep default if you don't understand
   - `FEE_PER_GAS` unit is Gwei
   - `AMOUNT` is the USDC amount you want to deposit
   - `TRANSACTIONS` **paste transaction hex here**. You can set multiple transaction hexes split by `,`
 
-4. Loop deposit transaction. The program will send your transaction hexes to flashbots and other mev builders once per block height.
+4. Loop deposit transaction. Keep the program running, program will send your transaction hexes to flashbots and other mev builders once per block height.
 ```bash
 bun run loop-deposit
 ```
 
 5. ⚠️ Do not use your wallet to send any other transactions before deposit success, or the nonce will become invalid.
+
+6. Stop the program use `Ctrl+C` after deposit success.
