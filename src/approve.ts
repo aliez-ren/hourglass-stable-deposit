@@ -5,8 +5,9 @@ import {
   parseTransaction,
   serializeTransaction,
 } from 'viem'
-import { amount, chainId, client, gas, usdc, value, vault } from './constant'
-import { address, connectId, deviceId, passphraseState, path, SDK } from './wallet'
+import { chainId, client, gas, usdc, value, vault } from './utils/constant'
+import { amount, path } from './utils/env'
+import { address, connectId, deviceId, passphraseState, SDK } from './utils/wallet'
 
 const { maxFeePerGas, maxPriorityFeePerGas } = await client.estimateFeesPerGas()
 

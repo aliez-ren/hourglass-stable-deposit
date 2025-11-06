@@ -1,17 +1,14 @@
-import 'dotenv/config'
 import {
   encodeFunctionData,
   formatEther,
   formatUnits,
   type Hash,
-  parseGwei,
   parseTransaction,
   serializeTransaction,
 } from 'viem'
-import { abi, amount, chainId, client, gas, value, vault } from './constant'
-import { address, connectId, deviceId, passphraseState, path, SDK } from './wallet'
-
-const feePerGas = parseGwei(process.env.FEE_PER_GAS ?? '10')
+import { abi, chainId, client, gas, value, vault } from './utils/constant'
+import { amount, feePerGas, path } from './utils/env'
+import { address, connectId, deviceId, passphraseState, SDK } from './utils/wallet'
 
 console.log(formatEther(feePerGas * gas), 'ETH')
 

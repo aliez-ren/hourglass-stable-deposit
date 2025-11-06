@@ -1,5 +1,6 @@
 import SDK from '@onekeyfe/hd-common-connect-sdk'
 import { getAddress } from 'viem'
+import { path } from './env'
 
 await SDK.init({})
 
@@ -23,8 +24,6 @@ const { payload: passphraseStatePayload } = await SDK.getPassphraseState(connect
 
 export const passphraseState =
   typeof passphraseStatePayload === 'object' ? undefined : passphraseStatePayload
-
-export const path = "m/44'/60'/0'/0/0"
 
 export const { payload: addressPayload } = await SDK.evmGetAddress(connectId, deviceId, {
   path,

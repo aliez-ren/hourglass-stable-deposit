@@ -1,15 +1,12 @@
-import 'dotenv/config'
-import type { Hex } from 'viem'
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts'
 import { sendFlashbotsBundle } from './bundlers/flashbots'
 import { sendFlashbotsProtect } from './bundlers/flashbots-protect'
 import { sendMevShareBundle } from './bundlers/mev-share'
 import { sendTitanBuilderBundle } from './bundlers/titan-builder'
-import { client } from './constant'
+import { client } from './utils/constant'
+import { transaction } from './utils/env'
 
-const serializedTransaction = process.env.TRANSACTION as Hex
-
-if (!serializedTransaction) {
+if (!transaction) {
   console.error('env TRANSACTION not set')
   process.exit(-1)
 }
@@ -19,10 +16,10 @@ async function onBlockNumber(blockNumber: bigint) {
     const wallet = privateKeyToAccount(generatePrivateKey())
     const targetBlockNumber = blockNumber + 1n
     const hashes = await Promise.all([
-      sendFlashbotsProtect(serializedTransaction),
-      sendFlashbotsBundle(serializedTransaction, wallet, targetBlockNumber),
-      sendMevShareBundle(serializedTransaction, wallet, targetBlockNumber),
-      sendTitanBuilderBundle(serializedTransaction, wallet, targetBlockNumber),
+      sendFlashbotsProtect(transaction),
+      sendFlashbotsBundle(transaction, wallet, targetBlockNumber),
+      sendMevShareBundle(transaction, wallet, targetBlockNumber),
+      sendTitanBuilderBundle(transaction, wallet, targetBlockNumber),
     ])
     console.log(blockNumber, ...hashes)
   } catch (err) {
