@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import SDK from '@onekeyfe/hd-common-connect-sdk'
 import {
   encodeFunctionData,

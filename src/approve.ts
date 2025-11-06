@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import {
   encodeFunctionData,
   erc20Abi,

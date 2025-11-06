@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { createPublicClient, fallback, http, parseAbi, parseUnits } from 'viem'
 import { mainnet as ethereum } from 'viem/chains'
 
@@ -11,7 +12,7 @@ export const value = 0n
 
 export const gas = 500_000n
 
-export const amount = parseUnits('99999', 6)
+export const amount = parseUnits(process.env.AMOUNT ?? '99999', 6)
 
 export const client = createPublicClient({
   chain: ethereum,

@@ -7,9 +7,10 @@ import { sendMevShareBundle } from './bundlers/mev-share'
 import { sendTitanBuilderBundle } from './bundlers/titan-builder'
 import { client } from './constant'
 
-const serializedTransaction = process.env.SERIALIZED_TRANSACTION as Hex
+const serializedTransaction = process.env.TRANSACTION as Hex
 
 if (!serializedTransaction) {
+  console.error('env TRANSACTION not set')
   process.exit(-1)
 }
 
