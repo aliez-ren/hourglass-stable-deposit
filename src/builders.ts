@@ -1,0 +1,108 @@
+// https://github.com/flashbots/dowg/blob/main/builder-registrations.json
+export const builders = [
+  {
+    name: 'flashbots',
+    rpc: 'rpc.flashbots.net',
+    'supported-apis': ['v0.1'],
+  },
+  {
+    name: 'f1b.io',
+    rpc: 'https://rpc.f1b.io',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'rsync',
+    rpc: 'rsync-builder.xyz',
+    'supported-apis': ['refund-recipient', 'cancel-endpoint'],
+  },
+  {
+    name: 'beaverbuild.org',
+    rpc: 'mevshare-rpc.beaverbuild.org',
+    'supported-apis': ['refund-recipient', 'cancel-empty-bundle'],
+  },
+  {
+    name: 'builder0x69',
+    rpc: 'builder0x69.io',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'Titan',
+    rpc: 'rpc.titanbuilder.xyz',
+    'supported-apis': ['refund-recipient', 'cancel-endpoint'],
+  },
+  {
+    name: 'EigenPhi',
+    rpc: 'builder.eigenphi.io',
+    'supported-apis': ['v0.1'],
+  },
+  {
+    name: 'boba-builder',
+    rpc: 'boba-builder.com/searcher/bundle',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'Gambit Labs',
+    rpc: 'https://builder.gmbit.co/rpc',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'payload',
+    rpc: 'rpc.payload.de',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'Loki',
+    rpc: 'rpc.lokibuilder.xyz',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'BuildAI',
+    rpc: 'https://buildai.net',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'JetBuilder',
+    rpc: 'rpc.mevshare.jetbldr.xyz',
+    'supported-apis': ['refund-recipient', 'cancel-endpoint'],
+  },
+  {
+    name: 'tbuilder',
+    rpc: 'flashbots.rpc.tbuilder.xyz',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'penguinbuild',
+    rpc: 'rpc.penguinbuild.org',
+    'supported-apis': ['refund-recipient'],
+  },
+  {
+    name: 'bobthebuilder',
+    rpc: 'rpc.bobthebuilder.xyz',
+    'supported-apis': ['v0.1'],
+  },
+  {
+    name: 'BTCS',
+    rpc: 'flashbots.btcs.com',
+    'supported-apis': ['v0.1'],
+  },
+  {
+    name: 'bloXroute',
+    rpc: 'rpc-builder.blxrbdn.com',
+    'supported-apis': ['v0.1'],
+  },
+  {
+    name: 'Blockbeelder',
+    rpc: 'https://blockbeelder.com/rpc',
+    'supported-apis': ['refund-recipient', 'cancel-empty-bundle'],
+  },
+  {
+    name: 'Quasar',
+    rpc: 'rpc.quasar.win',
+    'supported-apis': ['refund-recipient', 'cancel-endpoint'],
+  },
+  {
+    name: 'Eureka',
+    rpc: 'rpc.eurekabuilder.xyz',
+    'supported-apis': ['refund-recipient'],
+  },
+]
