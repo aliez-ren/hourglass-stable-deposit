@@ -64,3 +64,5 @@ const serializedTransaction = serializeTransaction(
 console.log(parseTransaction(serializedTransaction))
 
 console.log('Transaction HEX:', serializedTransaction)
+
+process.exit(0)
