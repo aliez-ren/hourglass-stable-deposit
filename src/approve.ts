@@ -3,11 +3,10 @@ import {
   encodeFunctionData,
   erc20Abi,
   type Hash,
-  maxUint256,
   parseTransaction,
   serializeTransaction,
 } from 'viem'
-import { chainId, client, gas, usdc, value, vault } from './constant'
+import { amount, chainId, client, gas, usdc, value, vault } from './constant'
 import { address, connectId, deviceId, passphraseState, path, SDK } from './wallet'
 
 const { maxFeePerGas, maxPriorityFeePerGas } = await client.estimateFeesPerGas()
@@ -17,7 +16,7 @@ const nonce = await client.getTransactionCount({ address })
 const data = encodeFunctionData({
   abi: erc20Abi,
   functionName: 'approve',
-  args: [vault, maxUint256],
+  args: [vault, amount],
 })
 
 console.log('waiting for signing')

@@ -6,10 +6,9 @@ import {
   type Hash,
   parseGwei,
   parseTransaction,
-  parseUnits,
   serializeTransaction,
 } from 'viem'
-import { abi, chainId, client, gas, value, vault } from './constant'
+import { abi, amount, chainId, client, gas, value, vault } from './constant'
 import { address, connectId, deviceId, passphraseState, path, SDK } from './wallet'
 
 const feePerGas = parseGwei(process.env.FEE_PER_GAS ?? '10')
@@ -17,8 +16,6 @@ const feePerGas = parseGwei(process.env.FEE_PER_GAS ?? '10')
 console.log(formatEther(feePerGas * gas), 'ETH')
 
 const nonce = await client.getTransactionCount({ address })
-
-const amount = parseUnits('99999', 6)
 
 console.log(formatUnits(amount, 6), 'USDC')
 
