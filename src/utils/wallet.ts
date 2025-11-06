@@ -20,7 +20,10 @@ export const connectId = device.connectId
 
 export const deviceId = device.deviceId
 
-const { payload: passphraseStatePayload } = await SDK.getPassphraseState(connectId)
+const { payload: passphraseStatePayload } = await SDK.getPassphraseState(connectId, {
+  skipPassphraseCheck: true,
+  useEmptyPassphrase: true,
+})
 
 export const passphraseState =
   typeof passphraseStatePayload === 'object' ? undefined : passphraseStatePayload
