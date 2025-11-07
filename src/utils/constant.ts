@@ -7,6 +7,8 @@ export const vault = '0xd9b2CB2FBAD204Fc548787EF56B918c845FCce40'
 
 export const usdc = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
 
+export const preUSDT = '0xd9b2CB2FBAD204Fc548787EF56B918c845FCce40'
+
 export const value = 0n
 
 export const gas = 200_000n
@@ -22,4 +24,7 @@ export const client = createPublicClient({
   ]),
 })
 
-export const abi = parseAbi(['function deposit(uint256 assets, address receiver) public'])
+export const abi = parseAbi([
+  'function deposit(uint256 assets, address receiver) public',
+  'function redeemNonKyc(uint256 shares,address receiver,address owner) public',
+])

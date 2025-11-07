@@ -7,6 +7,7 @@
     "approve": "bun run src/approve.ts",
     "pre-deposit": "bun run src/pre-deposit.ts",
     "loop-deposit": "bun run src/loop-deposit.ts",
+    "redeem": "bun run src/redeem.ts",
     "format": "biome check --write ."
   },
   "dependencies": {
